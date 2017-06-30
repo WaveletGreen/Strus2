@@ -4,12 +4,15 @@
 
 	<package name="fancyears" namespace="/" extends="struts-default">
 		<action name="login" class="actions.Login">
-			
-		<result type="redirect">
-			/jsp/loginSucez.jsp
-		</result></action>
+
+			<result>
+				/jsp/loginSucez.jsp
+			</result>
+		</action>
 		<action name="addAction" class="add">
 			<result name="loginSucez" type="redirect">
 				/jsp/loginSucez.jsp
 			</result>
-		</action></package></struts>    
+		</action>
+	</package>
+</struts>    
