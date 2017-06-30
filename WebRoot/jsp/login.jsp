@@ -24,8 +24,8 @@
 
 <body>
 	<form action="login.action">
-		用户名：<input name="user.userName" /> <br /> 密码：<input
-			name="user.password" /><br /> email:<input name="email" /><br />
+		用户名：<input name="user.userName" /> <br /> 密&emsp;码：<input
+			name="user.password" /><br /> email&nbsp;：<input name="email" /><br />
 		<input type="submit" />
 	</form>
 </body>
