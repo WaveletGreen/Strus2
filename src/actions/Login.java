@@ -1,8 +1,12 @@
 package actions;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
+
 import com.opensymphony.xwork2.ActionSupport;
 
-import entity.User;
+import entity.Users;
+import util.HibernateSessionFactory;
 
 /**
  * 三种方式实现Action处理<br/>
@@ -19,10 +23,10 @@ import entity.User;
  */
 public class Login extends ActionSupport {
 	private static final long serialVersionUID = -4186964667292763280L;
-	private User user;
+	private Users user;
 	private String email;
 
-	public User getUser() {
+	public Users getUser() {
 		return user;
 	}
 
@@ -34,15 +38,24 @@ public class Login extends ActionSupport {
 		this.email = email;
 	}
 
-	public void setUser(User user) {
+	public void setUser(Users user) {
 		this.user = user;
 	}
 
 	@Override
 	public String execute() {
-		System.out.println(user.getUserName() + "-----------"
-				+ user.getPassword());
-		System.out.println("---------" + email);
-		return SUCCESS;
+		System.out.println("----------");
+		Session session = HibernateSessionFactory.getSession();
+		String hql = "from Users where username=:username and password=:password";
+		Query query = session.createQuery(hql);
+		query.setString("username", "fancyears");
+		query.setString("password", "fancyears");
+		Users users=(Users) query.uniqueResult();
+		if ( users!= null) {
+			this.user=users;
+			return SUCCESS;
+		} else {
+			return ERROR;
+		}
 	}
 }

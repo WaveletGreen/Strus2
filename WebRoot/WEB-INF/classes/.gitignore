@@ -1,0 +1,9 @@
+/.struts.mex
+/META-INF/
+/actions/
+/add.class
+/entity/
+/hibernate.cfg.xml
+/struts.xml
+/test/
+/util/
