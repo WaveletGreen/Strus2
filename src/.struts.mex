@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Struts2Diagram version="2.0">
   <package name="fancyears" location="43,41" size="170,233">
-    <action name="login" location="3,25" size="150,41">
-      <result name="loginSucez">
-        <resourceEdge source="loginSucez" routing="0" target="loginSucez.jsp" />
+    <action name="login" location="8,30" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="loginSucez.jsp" />
+      </result>
+      <result name="no">
+        <resourceEdge source="no" routing="0" target="login.jsp" />
       </result>
     </action>
-    <action name="addAction" location="3,81" size="150,40">
-      <result name="addResult">
-        <resourceEdge source="addResult" routing="0" target="add.jsp" />
+    <action name="addAction" location="8,86" size="150,41">
+      <result name="loginSucez">
+        <resourceEdge source="loginSucez" routing="0" target="loginSucez.jsp" />
       </result>
     </action>
   </package>
   <webResource name="loginSucez.jsp" path="/jsp/loginSucez.jsp" location="560,55" size="150,55" />
   <webResource name="add.jsp" path="/jsp/add.jsp" location="560,174" size="150,55" />
+  <webResource name="login.jsp" path="/jsp/login.jsp" location="350,200" size="150,55" />
 </Struts2Diagram>
 

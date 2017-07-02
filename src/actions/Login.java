@@ -45,17 +45,19 @@ public class Login extends ActionSupport {
 	@Override
 	public String execute() {
 		System.out.println("----------");
+		System.out.println("+++++++++++++"+user.getUsername());
+		System.out.println("+++++++++++++"+user.getPassword());
 		Session session = HibernateSessionFactory.getSession();
 		String hql = "from Users where username=:username and password=:password";
 		Query query = session.createQuery(hql);
-		query.setString("username", "fancyears");
-		query.setString("password", "fancyears");
+		query.setString("username", user.getUsername());
+		query.setString("password", user.getPassword());
 		Users users=(Users) query.uniqueResult();
 		if ( users!= null) {
 			this.user=users;
 			return SUCCESS;
 		} else {
-			return ERROR;
+			return "NO";
 		}
 	}
 }

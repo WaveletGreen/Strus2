@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 
 <body>
-	欢迎 <s:property value="email"/> 
+	欢迎 <s:property value="user.username"/> 
 	<br>
 </body>
 </html>

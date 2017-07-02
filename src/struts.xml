@@ -8,6 +8,9 @@
 			<result>
 				/jsp/loginSucez.jsp
 			</result>
+			<result name="NO">
+				/jsp/login.jsp
+			</result>
 		</action>
 		<action name="addAction" class="add">
 			<result name="loginSucez" type="redirect">
