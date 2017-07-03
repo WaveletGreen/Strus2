@@ -54,6 +54,7 @@ public class Login extends ActionSupport {
 		query.setString("password", user.getPassword());
 		Users users=(Users) query.uniqueResult();
 		if ( users!= null) {
+			System.out.println(user.getUsername());
 			this.user=users;
 			return SUCCESS;
 		} else {
