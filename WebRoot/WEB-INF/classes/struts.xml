@@ -3,19 +3,18 @@
 <struts>
 
 	<package name="fancyears" namespace="/" extends="struts-default">
-		<action name="login" class="actions.Login">
-
+		<!-- 左边是类名，右边是方法 -->
+		<action name="*_*" class="actions.{1}" method="{2}">
 			<result>
 				/jsp/loginSucez.jsp
 			</result>
-			<result name="NO">
-				/jsp/login.jsp
+			<result name="input">
+				/jsp/{2}.jsp
+			</result>
+			<result name="error">
+				/jsp/error{2}.jsp
 			</result>
 		</action>
-		<action name="addAction" class="add">
-			<result name="loginSucez" type="redirect">
-				/jsp/loginSucez.jsp
-			</result>
-		</action>
+
 	</package>
 </struts>    

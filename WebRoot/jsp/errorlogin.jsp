@@ -1,10 +1,9 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="/struts-tags" prefix="s"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
+
 <%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -12,7 +11,8 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>My JSP 'index.jsp' starting page</title>
+<title>My JSP 'loginSucez.jsp' starting page</title>
+
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
@@ -21,13 +21,11 @@
 <!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+
 </head>
 
 <body>
-	<form action="UserFuncs_login.action">
-		<s:fielderror fieldName="msg"></s:fielderror>
-		用户名：<input name="user.username" /> <br /> 密&emsp;码：<input
-			name="user.password" /><br /> <input type="submit" />
-	</form>
+	登录失败，请<a href="/Struts2/jsp/login.jsp">重试</a>
+	<br>
 </body>
 </html>
