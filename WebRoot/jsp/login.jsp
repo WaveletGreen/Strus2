@@ -2,8 +2,7 @@
 <%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
 
@@ -18,16 +17,49 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-</head>
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<script type="text/javascript" src="js/jquery-3.2.1.slim.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript">
+	$(document).ready($(function() {
+		// 		$(".sub").focusin(function() {
+		// 			alert("ssss");
+		// 			$(this).css("style", "");
+		// 		});
+		// 		$("#loginPassword").focus(function() {
+		// 			$("#loginPassword").val("");
+		// 			$("#loginPassword").css("style", "");
+		// 		});
+		// 		$(".sub").each(function() {
+		// 			$(this).focus(function() {
+		// 				$(this).css("style", "");
+		// 			})
+		// 		});
 
+	}))
+</script>
+</head>
 <body>
-	<form action="UserFuncs_login.action">
-		<s:fielderror fieldName="msg"></s:fielderror>
-		用户名：<input name="user.username" /> <br /> 密&emsp;码：<input
-			name="user.password" /><br /> <input type="submit" />
-	</form>
+	<div id="container">
+		<div class="msgDiv">
+			<s:fielderror fieldName="msg"></s:fielderror>
+		</div>
+		<form action="UserFuncs_login.action" id="loginForm">
+			<table>
+				<tr>
+					<td>用户名：</td>
+					<td><input name="user.username" id="loginName" class="sub" /></td>
+				</tr>
+				<tr>
+					<td>密&emsp;码：</td>
+					<td><input name="user.password" id="loginPassword" class="sub" /></td>
+				</tr>
+
+				<tr>
+					<td><input type="submit" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
 </body>
 </html>

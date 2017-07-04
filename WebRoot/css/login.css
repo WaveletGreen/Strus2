@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+
+#container {
+	width: 500px;
+	margin: 0 auto;
+	padding-top: 52px;
+}
+
+.msgDiv {
+	float: left;
+	position: absolute;
+	width: 180px;
+	top: 4em;
+	left: 60em;
+	margin: 0;
+	padding: 0;
+}
+
+.msgRegDiv {
+	position: absolute;
+	width: 180px;
+	top: 2em;
+	left: 16em;
+	margin: 0;
+	padding:0;
+}
+.msgRegDiv .errorMessage{
+	padding-bottom:8px; 
+}
+.errorMessage {
+	color: red;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}

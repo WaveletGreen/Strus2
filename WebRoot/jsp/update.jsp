@@ -1,6 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
-
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -12,7 +11,7 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>My JSP 'loginSucez.jsp' starting page</title>
+<title>My JSP 'update.jsp' starting page</title>
 
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
@@ -26,11 +25,6 @@
 </head>
 
 <body>
-	欢迎
-	<s:property value="user.username" />
-	<a
-		href='UserFuncs_viewAll.action?user.username=<s:property value="user.username" />'>查看所有用户
-	</a>
-	<br>
+	<form action=""></form>
 </body>
 </html>
