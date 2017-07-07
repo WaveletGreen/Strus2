@@ -1,5 +1,5 @@
 #MyEclipse Hibernate Properties
-#Mon Jul 03 09:30:43 CST 2017
+#Fri Jul 07 11:34:32 CST 2017
 sessionFactoryName=
 genBasicCompId=false
 profile=
@@ -22,4 +22,3 @@ reSettingsFile=
 configFile=/Struts2/src/hibernate.cfg.xml
 createConfigFile=false
 addLibs2Classpath=true
-baseDaoClass=

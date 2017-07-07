@@ -44,7 +44,7 @@
 		<div class="msgDiv">
 			<s:fielderror fieldName="msg"></s:fielderror>
 		</div>
-		<form action="UserFuncs_login.action" id="loginForm">
+		<form action="userUserFuncs_login.action" id="loginForm">
 			<table>
 				<tr>
 					<td>用户名：</td>

@@ -39,7 +39,7 @@
 		<s:fielderror fieldName="name_error"></s:fielderror>
 		<s:fielderror fieldName="password_error"></s:fielderror>
 	</div>
-	<form action="UserFuncs_regist.action" id="loginForm">
+	<form action="userUserFuncs_regist.action" id="loginForm">
 		<table>
 			<thead>注册
 			</thead>

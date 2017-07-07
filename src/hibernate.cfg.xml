@@ -6,12 +6,12 @@
 <hibernate-configuration>
 
 	<session-factory>
-		<property name="myeclipse.connection.profile">JDBC</property>
+		<property name="myeclipse.connection.profile">news</property>
 		<property name="dialect">
 			org.hibernate.dialect.Oracle9Dialect
 		</property>
-		<property name="connection.password">tiger</property>
-		<property name="connection.username">scott</property>
+		<property name="connection.password">news</property>
+		<property name="connection.username">news</property>
 		<property name="connection.url">
 			jdbc:oracle:thin:@localhost:1521:HUAYU
 		</property>
@@ -21,8 +21,8 @@
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>
-		
 		<mapping resource="entity/Users.hbm.xml" />
+		<mapping resource="entity/Userfile.hbm.xml" />
 
 	</session-factory>
 

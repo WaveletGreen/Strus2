@@ -1,11 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="/struts-tags" prefix="s"%>
-
 <%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -13,7 +9,7 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>My JSP 'loginSucez.jsp' starting page</title>
+<title>My JSP 'uploadSuccess.jsp' starting page</title>
 
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
@@ -27,13 +23,7 @@
 </head>
 
 <body>
-	欢迎
-	<s:property value="user.username" />
-	<a
-		href='userUserFuncs_viewAll.action?user.username=<s:property value="user.username" />'>查看所有用户
-
-	</a>
-	<a href="jsp/fileupload.jsp">上传文件</a>
+	上传成功
 	<br>
 </body>
 </html>
