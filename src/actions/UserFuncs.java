@@ -1,11 +1,14 @@
 package actions;
 
 import java.util.List;
+import java.util.Map;
 
+import org.apache.struts2.ServletActionContext;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import entity.Users;
@@ -71,6 +74,7 @@ public class UserFuncs extends ActionSupport {
 	 */
 
 	public String login() {
+		ActionContext var= ServletActionContext.getContext();
 		System.out.println("----------");
 		System.out.println("+++++++++++++" + user.getUsername());
 		System.out.println("+++++++++++++" + user.getPassword());

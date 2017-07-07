@@ -27,7 +27,7 @@
 
 <body>
 	<p>
-		<s:property value="user.username"
+		<s:property value="user.username"/>
 	</p>
 	<form method="post" action="fileFileHandle.action"
 		enctype="multipart/form-data">
