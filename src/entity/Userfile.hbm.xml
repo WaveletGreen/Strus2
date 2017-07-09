@@ -6,18 +6,19 @@
 -->
 <hibernate-mapping>
     <class name="entity.Userfile" table="USERFILE" schema="NEWS">
-        <id name="username" type="java.lang.String">
-            <column name="USERNAME" length="50" />
+        <id name="newfilename" type="java.lang.String">
+            <column name="NEWFILENAME" length="510" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="users" class="entity.Users" update="false" insert="false" fetch="select">
-            <column name="USERNAME" length="50" not-null="true" unique="true" />
+        <many-to-one name="users" class="entity.Users" fetch="select">
+            <column name="USERNAME" length="200" not-null="true">
+                <comment>用户名</comment>
+            </column>
         </many-to-one>
         <property name="oldfilename" type="java.lang.String">
-            <column name="OLDFILENAME" />
-        </property>
-        <property name="newfilename" type="java.lang.String">
-            <column name="NEWFILENAME" />
+            <column name="OLDFILENAME" length="510">
+                <comment>原始文件名</comment>
+            </column>
         </property>
     </class>
 </hibernate-mapping>

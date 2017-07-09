@@ -29,7 +29,7 @@
 	<p>
 		<s:property value="user.username"/>
 	</p>
-	<form method="post" action="fileFileHandle.action"
+	<form method="post" action="file_FileHandle_upload.action"
 		enctype="multipart/form-data">
 		<input type="file" name="myFile" /> <br /> <input type="submit" />
 	</form>

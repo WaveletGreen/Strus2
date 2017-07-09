@@ -1,10 +1,9 @@
 #MyEclipse Hibernate Properties
-#Fri Jul 07 11:34:32 CST 2017
-sessionFactoryName=
+#Sat Jul 08 21:56:04 CST 2017
 genBasicCompId=false
+sessionFactoryName=
 profile=
 daoSFId=
-version=3.3
 jndiPath=
 detectM2M=false
 reStrategyClass=
@@ -12,8 +11,6 @@ detectO2O=false
 springDaoFile=
 useJavaTypes=true
 keyGenerator=
-libInstallFolder=<no jars/zips in selected libraries>
-addLibs2Project=true
 genVersionTag=false
 sessionFactoryId=
 basePersistenceClass=
@@ -21,4 +18,3 @@ genAnnotations=false
 reSettingsFile=
 configFile=/Struts2/src/hibernate.cfg.xml
 createConfigFile=false
-addLibs2Classpath=true

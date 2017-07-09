@@ -1,9 +1,11 @@
 package actions;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.interceptor.SessionAware;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -27,13 +29,14 @@ import util.HibernateSessionFactory;
  * @author Administrator
  * 
  */
-public class UserFuncs extends ActionSupport {
+public class UserFuncs extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = -4186964667292763280L;
 	private Users user;
 	private String email;
 	private String msg = "";
 	private List<Users> list;
 	private String delName;
+	private Map<String, Object> session = new HashMap<String, Object>();// 从SessionAware中获取HttpSession
 
 	public String getDelName() {
 		return delName;
@@ -74,7 +77,7 @@ public class UserFuncs extends ActionSupport {
 	 */
 
 	public String login() {
-		ActionContext var= ServletActionContext.getContext();
+		ActionContext var = ServletActionContext.getContext();
 		System.out.println("----------");
 		System.out.println("+++++++++++++" + user.getUsername());
 		System.out.println("+++++++++++++" + user.getPassword());
@@ -86,6 +89,7 @@ public class UserFuncs extends ActionSupport {
 		Users users = (Users) query.uniqueResult();
 		if (users != null) {
 			this.user = users;
+			this.session.put("user", this.user);
 			return SUCCESS;
 		} else {
 			addFieldError("msg", "用户名或密码错误!");
@@ -146,8 +150,19 @@ public class UserFuncs extends ActionSupport {
 		session.close();
 		return "commonPage";
 	}
+
 	public String update() {
-		
+
 		return "commonPage";
 	}
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
 }

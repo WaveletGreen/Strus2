@@ -8,10 +8,9 @@ public class Userfile implements java.io.Serializable {
 
 	// Fields
 
-	private String username;
+	private String newfilename;
 	private Users users;
 	private String oldfilename;
-	private String newfilename;
 
 	// Constructors
 
@@ -20,28 +19,26 @@ public class Userfile implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Userfile(String username, Users users) {
-		this.username = username;
+	public Userfile(String newfilename, Users users) {
+		this.newfilename = newfilename;
 		this.users = users;
 	}
 
 	/** full constructor */
-	public Userfile(String username, Users users, String oldfilename,
-			String newfilename) {
-		this.username = username;
+	public Userfile(String newfilename, Users users, String oldfilename) {
+		this.newfilename = newfilename;
 		this.users = users;
 		this.oldfilename = oldfilename;
-		this.newfilename = newfilename;
 	}
 
 	// Property accessors
 
-	public String getUsername() {
-		return this.username;
+	public String getNewfilename() {
+		return this.newfilename;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setNewfilename(String newfilename) {
+		this.newfilename = newfilename;
 	}
 
 	public Users getUsers() {
@@ -58,14 +55,6 @@ public class Userfile implements java.io.Serializable {
 
 	public void setOldfilename(String oldfilename) {
 		this.oldfilename = oldfilename;
-	}
-
-	public String getNewfilename() {
-		return this.newfilename;
-	}
-
-	public void setNewfilename(String newfilename) {
-		this.newfilename = newfilename;
 	}
 
 }
