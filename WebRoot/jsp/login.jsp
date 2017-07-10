@@ -2,7 +2,8 @@
 <%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
 
@@ -36,27 +37,43 @@
 		// 			})
 		// 		});
 
-	}))
+	}));
+	function langSet(lang) {
+		window.location.href = "langSet.action?request_locale=" + lang;
+	}
 </script>
 </head>
 <body>
 	<div id="container">
+		<!-- 	<a href="langSet.action?request_locale=en_US">英文</a>   -->
+		<!-- 	<a href="langSet.action?request_locale=zh_CN">中文</a>-->
 		<div class="msgDiv">
 			<s:fielderror fieldName="msg"></s:fielderror>
 		</div>
+		<select id="langSelector">
+			<option onclick="langSet('zh_CN')">中文</option>
+			<option onclick="langSet('en_US')">英文</option>
+		</select>
 		<form action="userUserFuncs_login.action" id="loginForm">
+
 			<table>
+
 				<tr>
-					<td>用户名：</td>
-					<td><input name="user.username" id="loginName" class="sub" /></td>
+					<td><s:text name="username" />
+					</td>
+					<td><input name="user.username" id="loginName" class="sub" />
+					</td>
 				</tr>
 				<tr>
-					<td>密&emsp;码：</td>
-					<td><input name="user.password" id="loginPassword" class="sub" /></td>
+					<td><s:text name="password" />
+					</td>
+					<td><input name="user.password" id="loginPassword" class="sub" />
+					</td>
 				</tr>
 
 				<tr>
-					<td><input type="submit" /></td>
+					<td><input type="submit" value="<s:text name="login"/>" />
+					</td>
 				</tr>
 			</table>
 		</form>

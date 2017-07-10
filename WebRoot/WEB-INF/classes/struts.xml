@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
+	<!-- 开启国家化 -->
+	<constant name="struts.custom.i18n.resources" value="global" />
+	<constant name="struts.i18n.encoding" value="utf-8" />
+
 	<!-- 当struts的配置文件修改后,系统是否自动重新加载该文件, 默认值为false(生产环境下使用),开发阶段最好打开 -->
 	<constant value="true" name="struts.configuration.xml.reload" />
 	<!-- 开发模式下使用,这样可以打印出更详细的错误信息 -->
@@ -37,6 +41,9 @@
 		<!-- 预下载 -->
 		<action name="preDownload" class="actions.FileHandle" method="preDownload">
 			<result>/jsp/download.jsp</result>
+		</action>
+		<action name="langSet" class="actions.Global">
+			<result>/jsp/login.jsp</result>
 		</action>
 	</package>
 </struts>    
