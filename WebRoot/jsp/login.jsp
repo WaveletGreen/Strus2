@@ -39,44 +39,46 @@
 
 	}));
 	function langSet(lang) {
-		window.location.href = "langSet.action?request_locale=" + lang;
+		window.location.href ="<%=basePath%>
+	langSet.action?request_locale="
+				+ lang;
 	}
+// 	function langSetA(){
+// 	document.getElementById("")
+// 	}
 </script>
 </head>
 <body>
 	<div id="container">
-		<!-- 	<a href="langSet.action?request_locale=en_US">英文</a>   -->
-		<!-- 	<a href="langSet.action?request_locale=zh_CN">中文</a>-->
+		<a href="langSet.action?request_locale=en_US">英文</a> <a
+			href="langSet.action?request_locale=zh_CN">中文</a>
 		<div class="msgDiv">
 			<s:fielderror fieldName="msg"></s:fielderror>
 		</div>
-		<select id="langSelector">
-			<option onclick="langSet('zh_CN')">中文</option>
+		<select id="langSelector" onchange="langSetA()">
+			<!-- 		onclick并不支持IE以外的浏览器，有待改进 -->
+			<option onchange="langSet('zh_CN')" onclick="langSet('zh_CN')">中文</option>
 			<option onclick="langSet('en_US')">英文</option>
 		</select>
 		<form action="userUserFuncs_login.action" id="loginForm">
-
+			<s:actionerror />
 			<table>
-
 				<tr>
-					<td><s:text name="username" />
-					</td>
+					<td><s:text name="username" /></td>
 					<td><input name="user.username" id="loginName" class="sub" />
 					</td>
 				</tr>
 				<tr>
-					<td><s:text name="password" />
-					</td>
+					<td><s:text name="password" /></td>
 					<td><input name="user.password" id="loginPassword" class="sub" />
 					</td>
 				</tr>
-
 				<tr>
-					<td><input type="submit" value="<s:text name="login"/>" />
-					</td>
+					<td><input type="submit" value="<s:text name="login"/>" /></td>
 				</tr>
 			</table>
 		</form>
+		<a href="preDownload.action">查看文件</a>
 	</div>
 </body>
 </html>

@@ -31,7 +31,7 @@
 	<s:property value="user.username" />
 	<a
 		href='userUserFuncs_viewAll.action?user.username=<s:property value="user.username" />'>查看所有用户
-
+		
 	</a>
 	<a href="jsp/fileupload.jsp">上传文件</a>
 	<br>
