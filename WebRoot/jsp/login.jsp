@@ -23,6 +23,20 @@
 <script type="text/javascript" src="js/login.js"></script>
 <script type="text/javascript">
 	$(document).ready($(function() {
+		$("#langSelector").change(function(){
+			var lang=$(this).find("option:selected").val();
+					window.location.href ="<%=basePath%>langSet.action?request_locale="+ lang;
+										});
+		}
+	));
+	
+	$(function (){
+		$("#langSelector").children().each(function (){
+			if(this.val()==<s:property value="user"/>){
+			}
+			alert("222")
+		});
+	});		
 		// 		$(".sub").focusin(function() {
 		// 			alert("ssss");
 		// 			$(this).css("style", "");
@@ -37,28 +51,23 @@
 		// 			})
 		// 		});
 
-	}));
-	function langSet(lang) {
-		window.location.href ="<%=basePath%>
-	langSet.action?request_locale="
-				+ lang;
-	}
-// 	function langSetA(){
-// 	document.getElementById("")
-// 	}
+					
+		
 </script>
 </head>
 <body>
 	<div id="container">
-		<a href="langSet.action?request_locale=en_US">英文</a> <a
-			href="langSet.action?request_locale=zh_CN">中文</a>
+		<!-- 	onclick="langSet('en_US')" -->
+		<!--  onchange="langSet('zh_CN')"  onclick="langSet('zh_CN')" -->
+		<!-- 		<a href="langSet.action?request_locale=en_US" value="en_US">English</a> -->
+		<!-- 		<a href="langSet.action?request_locale=zh_CN" value="zh_CN">中文</a> -->
 		<div class="msgDiv">
 			<s:fielderror fieldName="msg"></s:fielderror>
 		</div>
-		<select id="langSelector" onchange="langSetA()">
+		<select id="langSelector">
 			<!-- 		onclick并不支持IE以外的浏览器，有待改进 -->
-			<option onchange="langSet('zh_CN')" onclick="langSet('zh_CN')">中文</option>
-			<option onclick="langSet('en_US')">英文</option>
+			<option value="zh_CN" selected="selected">中文</option>
+			<option value="en_US">English</option>
 		</select>
 		<form action="userUserFuncs_login.action" id="loginForm">
 			<s:actionerror />
