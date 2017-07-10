@@ -32,7 +32,7 @@
 	
 	$(function (){
 		$("#langSelector").children().each(function (){
-			if(this.val()==<s:property value="user"/>){
+			if(this.val()==<s:property value="user.username"/>){
 			}
 			alert("222")
 		});
