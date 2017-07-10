@@ -34,7 +34,7 @@
 		$("#langSelector").children().each(function (){
 			if(this.val()==<s:property value="user.username"/>){
 			}
-			alert("222")
+			alert("222sss")
 		});
 	});		
 		// 		$(".sub").focusin(function() {
