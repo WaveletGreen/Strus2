@@ -12,9 +12,14 @@
 	<package name="fancyears" namespace="/" extends="struts-default">
 		<interceptors>
 			<interceptor name="isValidate" class="customInterceptor.IsValidate"></interceptor>
+			<interceptor name="contentValidate" class="customInterceptor.ContentValidate"></interceptor>
 			<interceptor-stack name="identyInspectorStack">
 				<interceptor-ref name="defaultStack"></interceptor-ref>
 				<interceptor-ref name="isValidate"></interceptor-ref>
+			</interceptor-stack>
+			<interceptor-stack name="articleValidate">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="contentValidate"></interceptor-ref>
 			</interceptor-stack>
 		</interceptors>
 		<!-- 左边是类名，右边是方法 -->
@@ -51,10 +56,17 @@
 			<result>/jsp/download.jsp</result>
 			<result name="input">/jsp/login.jsp</result>
 		</action>
+		<!-- 国际化 -->
 		<action name="langSet" class="actions.Global">
 			<result>/jsp/login.jsp</result>
 		</action>
-
+		<!-- 文字过滤 -->
+		<action name="publicArticle" class="actions.UserContent">
+			<interceptor-ref name="articleValidate"></interceptor-ref>
+			<result>
+				/jsp/publishSuccess.jsp
+			</result>
+		</action>
 
 	</package>
 </struts>    

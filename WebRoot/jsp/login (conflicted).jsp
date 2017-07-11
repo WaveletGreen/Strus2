@@ -22,26 +22,37 @@
 <script type="text/javascript" src="js/login.js"></script>
 <script type="text/javascript">
 	$(document).ready(
-		function() {
-			$("#langSelector").change(function() {
-				var lang = $(this).find("option:selected").val();
-				window.location.href = "<%=basePath%>langSet.action?request_locale=" + lang;
+	
+		$(function() {
+			$("#langSelector").change(function(){
+				var lang=$(this).find("option:selected").val();
+					window.location.href ="<%=basePath%>langSet.action?request_locale="+ lang;
+										});
+		});
+		
+	$(function (){
+		$("#langSelector").children().each(function (){
+			alert($(this).val());
 			})
-		}
-	)
-	// 		$(".sub").focusin(function() {
-	// 			alert("ssss");
-	// 			$(this).css("style", "");
-	// 		});
-	// 		$("#loginPassword").focus(function() {
-	// 			$("#loginPassword").val("");
-	// 			$("#loginPassword").css("style", "");
-	// 		});
-	// 		$(".sub").each(function() {
-	// 			$(this).focus(function() {
-	// 				$(this).css("style", "");
-	// 			})
-	// 		});
+		})
+	);
+	
+		// 		$(".sub").focusin(function() {
+		// 			alert("ssss");
+		// 			$(this).css("style", "");
+		// 		});
+		// 		$("#loginPassword").focus(function() {
+		// 			$("#loginPassword").val("");
+		// 			$("#loginPassword").css("style", "");
+		// 		});
+		// 		$(".sub").each(function() {
+		// 			$(this).focus(function() {
+		// 				$(this).css("style", "");
+		// 			})
+		// 		});
+
+					
+		
 </script>
 </head>
 <body>
